@@ -23,14 +23,14 @@
 		65D95DBE1371C9E000C81057 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65D95DC01371C9E000C81057 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		65D95DC21371C9E000C81057 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		65D95DC61371C9E000C81057 /* calc-Info.plist */ = {isa = PBXFileReference; path = "calc-Info.plist"; sourceTree = "<group>"; };
+		65D95DC61371C9E000C81057 /* calc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "calc-Info.plist"; sourceTree = "<group>"; };
 		65D95DC81371C9E000C81057 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		65D95DCA1371C9E000C81057 /* calc-Prefix.pch */ = {isa = PBXFileReference; path = "calc-Prefix.pch"; sourceTree = "<group>"; };
+		65D95DCA1371C9E000C81057 /* calc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "calc-Prefix.pch"; sourceTree = "<group>"; };
 		65D95DCB1371C9E000C81057 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		65D95DCD1371C9E000C81057 /* calcAppDelegate.h */ = {isa = PBXFileReference; path = calcAppDelegate.h; sourceTree = "<group>"; };
+		65D95DCD1371C9E000C81057 /* calcAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calcAppDelegate.h; sourceTree = "<group>"; };
 		65D95DCE1371C9E000C81057 /* calcAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calcAppDelegate.m; sourceTree = "<group>"; };
 		65D95DD11371C9E000C81057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		65D95DD31371C9E000C81057 /* calcViewController.h */ = {isa = PBXFileReference; path = calcViewController.h; sourceTree = "<group>"; };
+		65D95DD31371C9E000C81057 /* calcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calcViewController.h; sourceTree = "<group>"; };
 		65D95DD41371C9E000C81057 /* calcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calcViewController.m; sourceTree = "<group>"; };
 		65D95DD71371C9E000C81057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/calcViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
