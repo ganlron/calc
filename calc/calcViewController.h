@@ -13,9 +13,14 @@
     IBOutlet UILabel *calculatorScreen;
     int currentOperation;
     float currentNumber;
+    float currentDecimal;
+    int decimalCount;
+    BOOL decimalOn;
     
 }
+
 -(IBAction)buttonDigitPressed:(id)sender;
+-(IBAction)buttonDecimalPressed:(id)sender;
 -(IBAction)buttonOperationPressed:(id)sender;
 -(IBAction)cancelInput;
 -(IBAction)cancelOperation;

@@ -11,25 +11,40 @@
 @implementation calcViewController
 
 -(IBAction)buttonDigitPressed:(id)sender {
-    currentNumber = currentNumber *10 + (float)[sender tag];
-    calculatorScreen.text = [NSString stringWithFormat:@"%2f",currentNumber];
+    if (decimalOn == 1) {
+        decimalCount = decimalCount + 1;
+        currentDecimal = currentDecimal + ((float)[sender tag] / pow(10,decimalCount));
+        calculatorScreen.text = [NSString stringWithFormat:@"%2f",currentNumber + currentDecimal];
+    } else {
+        currentNumber = currentNumber *10 + (float)[sender tag];
+        calculatorScreen.text = [NSString stringWithFormat:@"%2f",currentNumber];
+    }
+}
+
+-(IBAction)buttonDecimalPressed:(id)sender {
+    decimalCount = 0;
+    if (decimalOn == 0) decimalOn = 1;
+    else decimalOn = 0;
 }
 
 -(IBAction)buttonOperationPressed:(id)sender {
-    if (currentOperation == 0) result = currentNumber;
+    decimalCount = 0;
+    decimalOn = 0;
+    float totalNumber = currentNumber + currentDecimal;
+    if (currentOperation == 0) result = totalNumber;
     else {
         switch (currentOperation) {
             case 1:
-                result = result + currentNumber;
+                result = result + totalNumber;
                 break;
             case 2:
-                result = result - currentNumber;
+                result = result - totalNumber;
                 break;
             case 3:
-                result = result * currentNumber;
+                result = result * totalNumber;
                 break;
             case 4:
-                result = result / currentNumber;
+                result = result / totalNumber;
                 break;
             case 5:
                 currentOperation = 0;
@@ -38,6 +53,7 @@
         }
     }
     currentNumber = 0;
+    currentDecimal = 0;
     calculatorScreen.text = [NSString stringWithFormat:@"%2f",result];
     if ([sender tag] == 0) result = 0;
     currentOperation = [sender tag];
@@ -46,11 +62,15 @@
 
 -(IBAction)cancelInput {
     currentNumber = 0;
+    decimalOn = 0;
+    decimalCount = 0;
     calculatorScreen.text = @"0";
 }
 
 -(IBAction)cancelOperation {
     currentNumber = 0;
+    decimalOn = 0;
+    decimalCount = 0;
     calculatorScreen.text = @"0";
     currentOperation = 0;
 }
