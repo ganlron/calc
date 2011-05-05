@@ -13,12 +13,11 @@
 -(IBAction)buttonDigitPressed:(id)sender {
     if (decimalOn == 1) {
         decimalCount = decimalCount + 1;
-        currentDecimal = currentDecimal + ((float)[sender tag] / pow(10,decimalCount));
-        calculatorScreen.text = [NSString stringWithFormat:@"%2f",currentNumber + currentDecimal];
+        currentDecimal = currentDecimal + ((double)[sender tag] / pow(10,decimalCount));
     } else {
-        currentNumber = currentNumber *10 + (float)[sender tag];
-        calculatorScreen.text = [NSString stringWithFormat:@"%2f",currentNumber];
+        currentNumber = currentNumber *10 + (double)[sender tag];
     }
+    calculatorScreen.text = [NSString stringWithFormat:@"%0.12G",currentNumber + currentDecimal];
 }
 
 -(IBAction)buttonDecimalPressed:(id)sender {
@@ -30,7 +29,7 @@
 -(IBAction)buttonOperationPressed:(id)sender {
     decimalCount = 0;
     decimalOn = 0;
-    float totalNumber = currentNumber + currentDecimal;
+    double totalNumber = currentNumber + currentDecimal;
     if (currentOperation == 0) result = totalNumber;
     else {
         switch (currentOperation) {
@@ -54,7 +53,7 @@
     }
     currentNumber = 0;
     currentDecimal = 0;
-    calculatorScreen.text = [NSString stringWithFormat:@"%2f",result];
+    calculatorScreen.text = [NSString stringWithFormat:@"%0.12G",result];
     if ([sender tag] == 0) result = 0;
     currentOperation = [sender tag];
 }
@@ -62,6 +61,7 @@
 
 -(IBAction)cancelInput {
     currentNumber = 0;
+    currentDecimal = 0;
     decimalOn = 0;
     decimalCount = 0;
     calculatorScreen.text = @"0";
@@ -69,6 +69,7 @@
 
 -(IBAction)cancelOperation {
     currentNumber = 0;
+    currentDecimal = 0;
     decimalOn = 0;
     decimalCount = 0;
     calculatorScreen.text = @"0";
