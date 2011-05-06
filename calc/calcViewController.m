@@ -11,13 +11,19 @@
 @implementation calcViewController
 
 -(IBAction)buttonDigitPressed:(id)sender {
+    if (currentNumber.doubleValue == 0) {
+        currentNumber = [NSDecimalNumber zero];
+    }
     if (decimalOn == 1) {
         decimalCount = decimalCount + 1;
-        currentDecimal = currentDecimal + ((double)[sender tag] / pow(10,decimalCount));
+        double dcv = ((double)[sender tag] / pow(10,decimalCount));
+        currentNumber = [currentNumber decimalNumberByAdding: [[NSDecimalNumber alloc] initWithDouble:dcv]];
     } else {
-        currentNumber = currentNumber *10 + (double)[sender tag];
+        currentNumber = [currentNumber decimalNumberByMultiplyingBy:[[NSDecimalNumber alloc] initWithInt:10]];
+        currentNumber = [currentNumber decimalNumberByAdding: [[NSDecimalNumber alloc] initWithDouble:(double)[sender tag]]];
     }
-    calculatorScreen.text = [NSString stringWithFormat:@"%0.12G",currentNumber + currentDecimal];
+    calculatorScreen.text = [NSString stringWithFormat:@"%0.12G",[currentNumber doubleValue]];
+    [currentNumber retain];
 }
 
 -(IBAction)buttonDecimalPressed:(id)sender {
@@ -29,21 +35,20 @@
 -(IBAction)buttonOperationPressed:(id)sender {
     decimalCount = 0;
     decimalOn = 0;
-    double totalNumber = currentNumber + currentDecimal;
-    if (currentOperation == 0) result = totalNumber;
+    if (currentOperation == 0) result = [[NSDecimalNumber alloc] initWithDouble: [currentNumber doubleValue]];
     else {
         switch (currentOperation) {
             case 1:
-                result = result + totalNumber;
+                result = [result decimalNumberByAdding: currentNumber];
                 break;
             case 2:
-                result = result - totalNumber;
+                result = [result decimalNumberBySubtracting: currentNumber];
                 break;
             case 3:
-                result = result * totalNumber;
+                result = [result decimalNumberByMultiplyingBy: currentNumber];
                 break;
             case 4:
-                result = result / totalNumber;
+                result = [result decimalNumberByDividingBy: currentNumber];
                 break;
             case 5:
                 currentOperation = 0;
@@ -51,29 +56,29 @@
 
         }
     }
-    currentNumber = 0;
-    currentDecimal = 0;
-    calculatorScreen.text = [NSString stringWithFormat:@"%0.12G",result];
-    if ([sender tag] == 0) result = 0;
+    currentNumber = [NSDecimalNumber zero];
+    calculatorScreen.text = [NSString stringWithFormat:@"%0.12G",result.doubleValue];
+    if ([sender tag] == 0) result = [NSDecimalNumber zero];
     currentOperation = [sender tag];
+    [result retain];
 }
 
 
 -(IBAction)cancelInput {
-    currentNumber = 0;
-    currentDecimal = 0;
+    currentNumber = [NSDecimalNumber zero];
     decimalOn = 0;
     decimalCount = 0;
     calculatorScreen.text = @"0";
+    [currentNumber retain];
 }
 
 -(IBAction)cancelOperation {
-    currentNumber = 0;
-    currentDecimal = 0;
+    currentNumber = [NSDecimalNumber zero];
     decimalOn = 0;
     decimalCount = 0;
     calculatorScreen.text = @"0";
     currentOperation = 0;
+    [currentNumber retain];
 }
 
 

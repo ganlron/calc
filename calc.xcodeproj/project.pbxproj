@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6543BE83137437200044E4C2 /* Test.png in Resources */ = {isa = PBXBuildFile; fileRef = 6543BE82137437200044E4C2 /* Test.png */; };
 		65D95DBF1371C9E000C81057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D95DBE1371C9E000C81057 /* UIKit.framework */; };
 		65D95DC11371C9E000C81057 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D95DC01371C9E000C81057 /* Foundation.framework */; };
 		65D95DC31371C9E000C81057 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D95DC21371C9E000C81057 /* CoreGraphics.framework */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6543BE82137437200044E4C2 /* Test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Test.png; sourceTree = "<group>"; };
 		65D95DBA1371C9E000C81057 /* calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D95DBE1371C9E000C81057 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65D95DC01371C9E000C81057 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +54,7 @@
 		65D95DAF1371C9E000C81057 = {
 			isa = PBXGroup;
 			children = (
+				6543BE82137437200044E4C2 /* Test.png */,
 				65D95DC41371C9E000C81057 /* calc */,
 				65D95DBD1371C9E000C81057 /* Frameworks */,
 				65D95DBB1371C9E000C81057 /* Products */,
@@ -151,6 +154,7 @@
 				65D95DC91371C9E000C81057 /* InfoPlist.strings in Resources */,
 				65D95DD21371C9E000C81057 /* MainWindow.xib in Resources */,
 				65D95DD81371C9E000C81057 /* calcViewController.xib in Resources */,
+				6543BE83137437200044E4C2 /* Test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +242,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "calc/calc-Prefix.pch";
 				INFOPLIST_FILE = "calc/calc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -251,6 +256,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "calc/calc-Prefix.pch";
 				INFOPLIST_FILE = "calc/calc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -276,6 +282,7 @@
 				65D95DDD1371C9E000C81057 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface calcViewController : UIViewController {
-    double result;
+    NSDecimalNumber *result;
     IBOutlet UILabel *calculatorScreen;
     int currentOperation;
-    double currentNumber;
-    double currentDecimal;
+    NSDecimalNumber *currentNumber;
     int decimalCount;
     BOOL decimalOn;
     
